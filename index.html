@@ -9,9 +9,16 @@
 
 <body>
     <h1> Welcome To Survey Bot</h1>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="Survey-Bot" agent-id="f9b06ac6-fdc1-4fba-bd85-f16f34c99d2e"
-        language-code="en"></df-messenger>
+    <script type="text/javascript">
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+        (function (d, m) {
+            var kommunicateSettings = { "appId": "a22d6bf70fc53f747bf1c8d1fc9a2693", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
 </body>
 
 
