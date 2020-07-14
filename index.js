@@ -40,19 +40,26 @@ app.post('/webhook', (request, response) => {
             imageUrl: "https://thumbs.dreamstime.com/b/young-man-shaving-face-foam-vector-young-man-shaving-face-foam-vector-flat-cartoon-character-illustration-icon-design-111702476.jpg",
         })
         )
-        // agent.add("Do you shave everyday?")
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
 
     function genderYes(agent) {
-        agent.add("Do you play risk-sports?")
+        agent.add(new Card({
+            title: "Do you play risk-sports?",
+            imageUrl: "https://cover4insurance.com/download/anigif.gif",
+        })
+        )
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
-
+    //https://cover4insurance.com/download/anigif.gif
     function genderNo(agent) {
-        agent.add("Do you play risk-sports?")
+        agent.add(new Card({
+            title: "Do you play risk-sports?",
+            imageUrl: "https://cover4insurance.com/download/anigif.gif",
+        })
+        )
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
@@ -80,19 +87,31 @@ app.post('/webhook', (request, response) => {
     }
 
     function genderf(agent) {
-        agent.add("Are you a mother?")
+        agent.add(new Card({
+            title: "Are you a mother?",
+            imageUrl: "https://previews.123rf.com/images/baldyrgan/baldyrgan1309/baldyrgan130900138/22398385-mother-and-baby-symbol.jpg",
+        })
+        )
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
 
     function genderfYes(agent) {
-        agent.add("Did you breastFeed your child?")
+        agent.add(new Card({
+            title: "Did you breastFeed your child?",
+            imageUrl: "https://www.msh.org/sites/default/files/intl-bf-logo.gif",
+        })
+        )
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
 
     function genderfNo(agent) {
-        agent.add("Did you breastFeed your child?")
+        agent.add(new Card({
+            title: "Did you breastFeed your child?",
+            imageUrl: "https://www.msh.org/sites/default/files/intl-bf-logo.gif",
+        })
+        )
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
