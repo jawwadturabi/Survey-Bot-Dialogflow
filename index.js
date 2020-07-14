@@ -22,10 +22,10 @@ app.post('/webhook', (request, response) => {
 
     let intents = new Map();
     intents.set("Default Welcome Intent", welcome);
-    intents.set("Start-quiz", startQuiz);
-    intents.set("question", question)
-    intents.set("question - yes", questionYes)
-    intents.set("Bio", Bio)
+    // intents.set("Start-quiz", startQuiz);
+    // intents.set("question", question)
+    // intents.set("question - yes", questionYes)
+    // intents.set("Bio", Bio)
     _agent.handleRequest(intents)
 });
 
