@@ -1,13 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const http = require("http");
+const https = require("https");
 const app = express().use(bodyParser.json());
 app.use(express.static('index.html'))
 const { WebhookClient, Card, Suggestion } = require("dialogflow-fulfillment");
 
 
 setInterval(function () {
-    http.get("http://usil-bot.herokuapp.com");
+    https.get("https://survey-bot-dialogflow.herokuapp.com/");
 }, 1800000);
 
 app.get('/', (request, response) => {
