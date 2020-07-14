@@ -34,7 +34,12 @@ app.post('/webhook', (request, response) => {
     }
 
     function gender(agent) {
-        agent.add("Do you shave everyday?")
+        if (agent.queryText == "Male" || "male") {
+            agent.add("Do you shave everyday?")
+        }
+        else {
+            agent.add("Do you shave everyday?")
+        }
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
