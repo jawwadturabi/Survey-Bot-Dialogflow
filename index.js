@@ -11,7 +11,7 @@ setInterval(function () {
 }, 1800000);
 
 app.get('/', (request, response) => {
-    res.sendFile(__dirname + "/index.html");
+    response.sendFile(__dirname + "/index.html");
 })
 
 app.post('/webhook', (request, response) => {
