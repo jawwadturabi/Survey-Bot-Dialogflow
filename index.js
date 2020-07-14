@@ -33,7 +33,7 @@ app.post('/webhook', (request, response) => {
         agent.add(new Suggestion(`Female`));
     }
 
-    function more(agent) {
+    function gender(agent) {
         agent.add("Do you shave everyday?")
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
