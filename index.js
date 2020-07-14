@@ -1,7 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const http = require("http");
 const app = express().use(bodyParser.json());
 const { WebhookClient, Card, Suggestion } = require("dialogflow-fulfillment");
+
+
+setInterval(function () {
+    http.get("http://usil-bot.herokuapp.com");
+}, 1800000);
 
 app.get('/', (request, response) => {
     response.send("Welcome to survey bot")
@@ -144,15 +150,15 @@ app.post('/webhook', (request, response) => {
     intents.set("details", detail);
     intents.set("more", more)
     intents.set("gender", gender)
-    intents.set("gender-yes", genderYes)
-    intents.set("gender-no", genderNo)
-    intents.set("gender-yes-yes", genderYesYes)
-    intents.set("gender-no-no", genderNoNo)
+    intents.set("gender - yes", genderYes)
+    intents.set("gender - no", genderNo)
+    intents.set("gender - yes - yes", genderYesYes)
+    intents.set("gender - no - no", genderNoNo)
     intents.set("genderf", genderf)
-    intents.set("genderf-yes", genderfYes)
-    intents.set("genderf-no", genderfNo)
-    intents.set("genderf-yes-yes", genderfYesYes)
-    intents.set("genderf-no-no", genderfNoNo)
+    intents.set("genderf - yes", genderfYes)
+    intents.set("genderf - no", genderfNo)
+    intents.set("genderf - yes - yes", genderfYesYes)
+    intents.set("genderf - no - no", genderfNoNo)
 
     // intents.set("Bio", Bio)
     _agent.handleRequest(intents)
