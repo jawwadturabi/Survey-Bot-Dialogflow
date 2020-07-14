@@ -3,6 +3,10 @@ const bodyParser = require("body-parser");
 const app = express().use(bodyParser.json());
 const { WebhookClient, Card, Suggestion } = require("dialogflow-fulfillment");
 
+app.get('/', (request, response) => {
+    response.send("Welcome to survey bot")
+})
+
 app.post('/webhook', (request, response) => {
 
     const _agent = new WebhookClient({ request, response });
