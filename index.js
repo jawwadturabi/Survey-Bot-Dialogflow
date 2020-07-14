@@ -36,6 +36,7 @@ app.post('/webhook', (request, response) => {
 
     function gender(agent) {
         agent.add(new Card({
+            title: "Do you shave everyday?",
             imageUrl: "https://thumbs.dreamstime.com/b/young-man-shaving-face-foam-vector-young-man-shaving-face-foam-vector-flat-cartoon-character-illustration-icon-design-111702476.jpg",
         })
         )
