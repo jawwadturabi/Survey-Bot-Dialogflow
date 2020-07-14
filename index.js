@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
 const app = express().use(bodyParser.json());
+app.use(express.static('index.html'))
 const { WebhookClient, Card, Suggestion } = require("dialogflow-fulfillment");
 
 
@@ -10,7 +11,7 @@ setInterval(function () {
 }, 1800000);
 
 app.get('/', (request, response) => {
-    response.send("Welcome to survey bot")
+    res.sendFile(__dirname + "/index.html");
 })
 
 app.post('/webhook', (request, response) => {
@@ -59,7 +60,7 @@ app.post('/webhook', (request, response) => {
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
-    //https://cover4insurance.com/download/anigif.gif
+
     function genderNo(agent) {
         agent.add(new Card({
             title: "Do you play risk-sports?",
