@@ -11,6 +11,7 @@ app.post('/webhook', (request, response) => {
 
     const _agent = new WebhookClient({ request, response });
     console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
+
     function welcome(agent) {
         agent.add("Hi! How are you doing?. Please tell me where do you live?")
         agent.add(new Suggestion(`Post-Code-1`));
@@ -34,14 +35,87 @@ app.post('/webhook', (request, response) => {
     }
 
     function gender(agent) {
-        if (agent.queryText == "Male" || "male") {
-            agent.add("Do you shave everyday?")
-        }
-        else {
-            agent.add("Do you shave everyday?")
-        }
+        agent.add(new Card({
+            imageUrl: "https://thumbs.dreamstime.com/b/young-man-shaving-face-foam-vector-young-man-shaving-face-foam-vector-flat-cartoon-character-illustration-icon-design-111702476.jpg",
+        })
+        )
+        agent.add("Do you shave everyday?")
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
+    }
+
+    function genderYes(agent) {
+        agent.add("Do you play risk-sports?")
+        agent.add(new Suggestion(`Yes`));
+        agent.add(new Suggestion(`No`));
+    }
+
+    function genderNo(agent) {
+        agent.add("Do you play risk-sports?")
+        agent.add(new Suggestion(`Yes`));
+        agent.add(new Suggestion(`No`));
+    }
+
+    function genderYesYes(agent) {
+        agent.add(new Card({
+            title: "Thanks for filling out this survey",
+            imageUrl: "",
+            text: "For more details visit our website",
+            buttonText: " Visit website ",
+            buttonUrl: "https://www.example.com"
+        })
+        )
+    }
+
+    function genderNoNo(agent) {
+        agent.add(new Card({
+            title: "Thanks for filling out this survey",
+            imageUrl: "",
+            text: "For more details visit our website",
+            buttonText: " Visit website ",
+            buttonUrl: "https://www.example.com"
+        })
+        )
+    }
+
+    function genderf(agent) {
+        agent.add("Are you a mother?")
+        agent.add(new Suggestion(`Yes`));
+        agent.add(new Suggestion(`No`));
+    }
+
+    function genderfYes(agent) {
+        agent.add("Did you breastFeed your child?")
+        agent.add(new Suggestion(`Yes`));
+        agent.add(new Suggestion(`No`));
+    }
+
+    function genderfNo(agent) {
+        agent.add("Did you breastFeed your child?")
+        agent.add(new Suggestion(`Yes`));
+        agent.add(new Suggestion(`No`));
+    }
+
+    function genderfYesYes(agent) {
+        agent.add(new Card({
+            title: "Thanks for filling out this survey",
+            imageUrl: "",
+            text: "For more details visit our website",
+            buttonText: " Visit website ",
+            buttonUrl: "https://www.example.com"
+        })
+        )
+    }
+
+    function genderfNoNo(agent) {
+        agent.add(new Card({
+            title: "Thanks for filling out this survey",
+            imageUrl: "",
+            text: "For more details visit our website",
+            buttonText: " Visit website ",
+            buttonUrl: "https://www.example.com"
+        })
+        )
     }
 
 
@@ -50,6 +124,16 @@ app.post('/webhook', (request, response) => {
     intents.set("details", detail);
     intents.set("more", more)
     intents.set("gender", gender)
+    intents.set("gender-yes", genderYes)
+    intents.set("gender-no", genderNo)
+    intents.set("gender-yes-yes", genderYesYes)
+    intents.set("gender-no-no", genderNoNo)
+    intents.set("genderf", genderf)
+    intents.set("genderf-yes", genderfYes)
+    intents.set("genderf-no", genderfNo)
+    intents.set("genderf-yes-yes", genderfYesYes)
+    intents.set("genderf-no-no", genderfNoNo)
+
     // intents.set("Bio", Bio)
     _agent.handleRequest(intents)
 });
