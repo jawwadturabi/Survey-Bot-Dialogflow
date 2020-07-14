@@ -40,7 +40,7 @@ app.post('/webhook', (request, response) => {
             imageUrl: "https://thumbs.dreamstime.com/b/young-man-shaving-face-foam-vector-young-man-shaving-face-foam-vector-flat-cartoon-character-illustration-icon-design-111702476.jpg",
         })
         )
-        agent.add("Do you shave everyday?")
+        // agent.add("Do you shave everyday?")
         agent.add(new Suggestion(`Yes`));
         agent.add(new Suggestion(`No`));
     }
